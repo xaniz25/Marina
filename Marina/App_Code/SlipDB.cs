@@ -12,10 +12,10 @@ namespace Marina
     public static class SlipDB
     {
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public static List<Slip> GetSlipByDock(int dockid)
+        public static List<Slip> GetSlipByDock(int DockID)
         {
             List<Slip> slips = new List<Slip>();
-            Slip slip = null;
+            Slip slip;
 
             // create connection
             SqlConnection connection = MarinaDB.GetConnection();
@@ -23,11 +23,12 @@ namespace Marina
             // create SELECT command
             string query = "SELECT ID, Width, Length, DockID " +
                            "FROM Slip " +
-                           "WHERE @DockID = dockid";
+                           "WHERE @DockID = DockID";
 
             SqlCommand cmd = new SqlCommand(query, connection);
+
             // supply parameter value
-            cmd.Parameters.AddWithValue("@DockID", dockid);
+            cmd.Parameters.AddWithValue("@DockID", DockID);
 
             // run the SELECT query
             try
