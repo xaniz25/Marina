@@ -17,9 +17,10 @@
             <img id="banner" alt="banner" class="auto-style1" src="images/inlandmarina_banner.jpg" />
             <nav id="navbar">
                 <asp:Button class="btn" ID="BtnHome" runat="server" PostBackUrl="~/Homepage.aspx" Text="Home" />
-                <asp:Button class="btn" ID="BtnSlipByDock" runat="server" PostBackUrl="~/SlipByDock.aspx" Text="Slip By Dock" />
+                <asp:Button class="btn" ID="BtnSlipByDock" runat="server" PostBackUrl="~/SlipByDock.aspx" Text="Available Slips" />
                 <asp:Button class="btn" ID="BtnContact" runat="server" PostBackUrl="~/Contact.aspx" Text="Contact" />
                 <asp:Button class="btn" ID="BtnRegister" runat="server" PostBackUrl="~/Register.aspx" Text="Register" />
+                <asp:Button class="btn" ID="BtnLogin" runat="server" Text="Log In" PostBackUrl="~/LeaseSlip.aspx" />
             </nav>
     </header>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
