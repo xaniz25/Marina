@@ -43,9 +43,9 @@ namespace Marina
                 }
                 reader.Close();
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                throw exc;
+                throw ex;
             }
             finally
             {
