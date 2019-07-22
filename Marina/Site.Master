@@ -20,7 +20,7 @@
                 <asp:Button class="btn" ID="BtnSlipByDock" runat="server" PostBackUrl="~/SlipByDock.aspx" Text="Available Slips" />
                 <asp:Button class="btn" ID="BtnContact" runat="server" PostBackUrl="~/Contact.aspx" Text="Contact" />
                 <asp:Button class="btn" ID="BtnRegister" runat="server" PostBackUrl="~/Register.aspx" Text="Register" />
-                <asp:Button class="btn" ID="BtnLogin" runat="server" Text="Log In" PostBackUrl="~/LeaseSlip.aspx" />
+                <asp:Button class="btn" ID="BtnLogin" runat="server" Text="Log In" PostBackUrl="~/Login.aspx" />
             </nav>
     </header>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
