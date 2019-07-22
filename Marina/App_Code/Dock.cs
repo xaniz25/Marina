@@ -11,8 +11,8 @@ namespace Marina
 
         public string Name { get; set; }
 
-        public int WaterService { get; set; }
+        public bool WaterService { get; set; }
 
-        public int ElectricalService { get; set; }
+        public bool ElectricalService { get; set; }
     }
 }

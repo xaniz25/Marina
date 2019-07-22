@@ -37,8 +37,8 @@ namespace Marina
                     dock = new Dock();
                     dock.ID = (int)reader["ID"];
                     dock.Name = reader["Name"].ToString();
-                    dock.WaterService = (int)reader["WaterService"];
-                    dock.ElectricalService = (int)reader["ElectricalService"];
+                    dock.WaterService = (bool)reader["WaterService"];
+                    dock.ElectricalService = (bool)reader["ElectricalService"];
                     docks.Add(dock);
                 }
                 reader.Close();
