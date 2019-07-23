@@ -24,7 +24,7 @@ namespace Marina
             string query = "SELECT ID, Width, Length, DockID " +
                            "FROM Slip " +
                            "WHERE DockID in (Select ID from Dock Where DockID=@DockID) "+
-                           "And ID NOT IN(SELECT SLIPID FROM LEASE)";
+                           "AND ID NOT in (SELECT SlipID FROM Lease)";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -71,14 +71,14 @@ namespace Marina
             SqlConnection connection = MarinaDB.GetConnection();
 
             //join command
-            string query = "select SlipID, DockID, Width, Length from Customer c " +
+            string query = "select SlipID, Width, Length, DockID from Customer c " +
                             "inner join Lease l " +
                             "on c.ID = CustomerID " +
                             "inner join Slip s " +
                             "on s.ID = SlipID " +
                             "inner join Dock d " +
                             "on d.ID = DockID " +
-                            "where @CustomerID = Customer ID";
+                            "where @CustomerID = CustomerID";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 

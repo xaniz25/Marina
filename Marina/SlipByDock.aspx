@@ -9,22 +9,23 @@
             </asp:DropDownList>
             <asp:ObjectDataSource ID="DockDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDock" TypeName="Marina.DockDB"></asp:ObjectDataSource>
         </p>
-        <p>&nbsp;</p>
-        <p>Slip by Dock:</p>
-        <p>
-            <asp:GridView ID="gvSlips" runat="server" AutoGenerateColumns="False" DataSourceID="SlipDataSource">
+        <p>Available Slips:</p>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SlipID" DataSourceID="SqlDataSource1">
                 <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
+                    <asp:BoundField DataField="SlipID" HeaderText="SlipID" InsertVisible="False" ReadOnly="True" SortExpression="SlipID" />
                     <asp:BoundField DataField="Width" HeaderText="Width" SortExpression="Width" />
                     <asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
-                    <asp:BoundField DataField="DockID" HeaderText="DockID" SortExpression="DockID" />
+                    <asp:CheckBoxField DataField="WaterService" HeaderText="WaterService" SortExpression="WaterService" />
+                    <asp:CheckBoxField DataField="ElectricalService" HeaderText="ElectricalService" SortExpression="ElectricalService" />
                 </Columns>
             </asp:GridView>
-            <asp:ObjectDataSource ID="SlipDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetSlipByDock" TypeName="Marina.SlipDB">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" Type="Int32" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-        </p>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MarinaConnectionString1 %>" SelectCommand="SELECT s.ID as 'SlipID',Width, Length, WaterService, ElectricalService
+FROM Slip s JOIN Dock d ON d.ID = DockID
+WHERE DockID in (Select ID from Dock Where ID=@DockID)
+And s.ID NOT IN (SELECT SLIPID FROM LEASE)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>
