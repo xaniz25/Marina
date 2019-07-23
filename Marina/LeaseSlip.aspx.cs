@@ -13,5 +13,10 @@ namespace Marina
         {
 
         }
+
+        protected void GridView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
