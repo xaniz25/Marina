@@ -23,7 +23,8 @@ namespace Marina
             // create SELECT command
             string query = "SELECT ID, Width, Length, DockID " +
                            "FROM Slip " +
-                           "WHERE @DockID = DockID";
+                           "WHERE DockID in (Select ID from Dock Where DockID=@DockID) "+
+                           "And ID NOT IN(SELECT SLIPID FROM LEASE)";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
