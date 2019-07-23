@@ -29,7 +29,7 @@ namespace Marina
              * Add Validation
              */
           
-            using(SqlConnection connection = new SqlConnection(@"Data Source=DADI-LAPTOP;Initial Catalog=Marina;Integrated Security=True"))
+            using(SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=Marina;Integrated Security=True"))
             {
                 connection.Open();
                 string query = "SELECT COUNT(1) FROM Customer WHERE FirstName=@FirstName AND Phone=@Phone";
@@ -41,6 +41,7 @@ namespace Marina
                 if (count == 1)
                 {   
                     Session["FirstName"] = txtName.Text;
+                    Session["Phone"] = txtPhone.Text;
                     Response.Redirect("LeaseSlip.aspx");
                 }
                 else
@@ -53,8 +54,6 @@ namespace Marina
         {
             txtName.Text = "";
             txtPhone.Text = "";
-            
-
         }
 
     }
