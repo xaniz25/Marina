@@ -12,6 +12,14 @@
         width: 80px;
         text-align: left;
     }
+        .auto-style6 {
+            width: 80px;
+            text-align: right;
+            height: 122px;
+        }
+        .auto-style7 {
+            height: 122px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,8 +33,8 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">First Name</td>
-                <td>
+                <td class="auto-style6">First Name</td>
+                <td class="auto-style7">
                     <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="FirstNameRequired0" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name is required." ToolTip="First Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                 </td>
@@ -41,21 +49,21 @@
             <tr>
                 <td class="auto-style4">City</td>
                 <td>
-                    <asp:TextBox ID="TxtCity" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="CityRequired0" runat="server" ControlToValidate="TxtCity" ErrorMessage="City is required." ToolTip="City is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                 </td>
             </tr>
             <tr>
                 <td class="auto-style4">Password</td>
                 <td>
-                    <asp:TextBox ID="TxtPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="TxtPassword" ErrorMessage="Password is required" ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                 </td>
             </tr>
             <tr>
                 <td class="auto-style4">Confirm Password</td>
                 <td>
-                    <asp:TextBox ID="TxtConfirmPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmPassword" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="TxtConfirmPassword" ErrorMessage="Confirm Password is required." ToolTip="ConfirmPassword is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                 </td>
             </tr>
@@ -70,20 +78,8 @@
                 </td>
             </tr>
         </table>
-
-
-
-
-
     </div>
 
-    </asp:Content>
-
-    <asp:Login ID="Login1" runat="server" BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333">
-        <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
-        <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" />
-        <TextBoxStyle Font-Size="0.8em" />
-        <TitleTextStyle BackColor="#507CD1" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
-    </asp:Login>
+  <%--  </asp:Content>--%>
 </asp:Content>
 

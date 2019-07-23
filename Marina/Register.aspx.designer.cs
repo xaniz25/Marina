@@ -49,13 +49,13 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameRequired0;
         
         /// <summary>
-        /// TxtCity control.
+        /// txtCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCity;
+        protected global::System.Web.UI.WebControls.TextBox txtCity;
         
         /// <summary>
         /// CityRequired0 control.
@@ -67,13 +67,13 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator CityRequired0;
         
         /// <summary>
-        /// TxtPassword control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
         /// PasswordRequired control.
@@ -85,13 +85,13 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
         
         /// <summary>
-        /// TxtConfirmPassword control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
         /// ConfirmPasswordRequired control.
@@ -110,14 +110,5 @@ namespace Marina {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateUser;
-        
-        /// <summary>
-        /// Login1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Login Login1;
     }
 }
