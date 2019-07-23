@@ -60,10 +60,10 @@ namespace Marina
             return slips;
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public static List<Slip> GetSlipByCust(int CustID)
-        {
-            //join command
-        }
+        //[DataObjectMethod(DataObjectMethodType.Select)]
+        //public static List<Slip> GetSlipByCust(int CustID)
+        //{
+        //    //join command
+        //}
     }
 }
