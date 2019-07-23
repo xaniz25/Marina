@@ -6,7 +6,7 @@
         <p>Welcome, Customer First Name</p> <br />
                 <p>Your current and past slips:</p>
                 <p>
-                    <asp:GridView ID="gvLeasedSlips" runat="server" AutoGenerateColumns="False" DataSourceID="LeasedSlipsDataSource">
+                    <asp:GridView ID="gvLeasedSlips" runat="server" AutoGenerateColumns="False" DataSourceID="LeaseSlipsDataSource">
                         <Columns>
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
                             <asp:BoundField DataField="Width" HeaderText="Width" SortExpression="Width" />
@@ -14,7 +14,7 @@
                             <asp:BoundField DataField="DockID" HeaderText="DockID" SortExpression="DockID" />
                         </Columns>
                     </asp:GridView>
-                    <asp:ObjectDataSource ID="LeasedSlipsDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetSlipByCust" TypeName="Marina.SlipDB">
+                    <asp:ObjectDataSource ID="LeaseSlipsDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetSlipByCust" TypeName="Marina.SlipDB">
                         <SelectParameters>
                             <asp:Parameter Name="CustomerID" Type="Int32" />
                         </SelectParameters>
@@ -23,11 +23,25 @@
                 <p>
                     Lease new slip:</p>
                 <p>Select Dock:
-                    <asp:DropDownList ID="ddlDocks" runat="server" DataSourceID="DocksDataSource" DataTextField="Name" DataValueField="ID">
+                    <asp:DropDownList ID="ddlDocks" runat="server" DataSourceID="DocksDataSource" DataTextField="Name" DataValueField="ID" AutoPostBack="True">
                     </asp:DropDownList>
-                    <asp:ObjectDataSource ID="DocksDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDock" TypeName="Marina.DockDB"></asp:ObjectDataSource>
                 </p>
                 <p>Available Slips:</p>
+        <p>
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SlipsDataSource">
+                <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
+                    <asp:BoundField DataField="Width" HeaderText="Width" SortExpression="Width" />
+                    <asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
+                    <asp:BoundField DataField="DockID" HeaderText="DockID" SortExpression="DockID" />
+                </Columns>
+            </asp:GridView>
+            <asp:ObjectDataSource ID="SlipsDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetSlipByDock" TypeName="Marina.SlipDB">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" Type="Int32" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </p>
                 <p>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource2">
                         <Columns>

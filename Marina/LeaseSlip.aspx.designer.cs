@@ -22,13 +22,13 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.GridView gvLeasedSlips;
         
         /// <summary>
-        /// LeasedSlipsDataSource control.
+        /// LeaseSlipsDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource LeasedSlipsDataSource;
+        protected global::System.Web.UI.WebControls.ObjectDataSource LeaseSlipsDataSource;
         
         /// <summary>
         /// ddlDocks control.
@@ -40,13 +40,22 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.DropDownList ddlDocks;
         
         /// <summary>
-        /// DocksDataSource control.
+        /// GridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource DocksDataSource;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
+        
+        /// <summary>
+        /// SlipsDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource SlipsDataSource;
         
         /// <summary>
         /// GridView1 control.
