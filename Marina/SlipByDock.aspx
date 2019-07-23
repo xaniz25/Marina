@@ -27,5 +27,6 @@ And s.ID NOT IN (SELECT SLIPID FROM LEASE)">
                 <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
-    </div>
+        <br />
+        Please Login or Register to Lease a Slip.</div>
 </asp:Content>

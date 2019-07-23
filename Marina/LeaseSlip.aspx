@@ -36,7 +36,7 @@
                     <asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
                     <asp:CheckBoxField DataField="WaterService" HeaderText="WaterService" SortExpression="WaterService" />
                     <asp:CheckBoxField DataField="ElectricalService" HeaderText="ElectricalService" SortExpression="ElectricalService" />
-                    <asp:CommandField CausesValidation="False" SelectText="Lease" ShowSelectButton="True" />
+                    <asp:ButtonField ButtonType="Button" Text="Lease" />
                 </Columns>
             </asp:GridView>
         </p>
