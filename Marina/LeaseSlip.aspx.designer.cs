@@ -13,6 +13,42 @@ namespace Marina {
     public partial class WebForm5 {
         
         /// <summary>
+        /// gvLeasedSlips control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvLeasedSlips;
+        
+        /// <summary>
+        /// LeasedSlipsDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource LeasedSlipsDataSource;
+        
+        /// <summary>
+        /// ddlDocks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDocks;
+        
+        /// <summary>
+        /// DocksDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource DocksDataSource;
+        
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

@@ -11,7 +11,7 @@ namespace Marina
     {
         public static SqlConnection GetConnection()  //method which needs a call and return   this will be called in the StateDB (when connection needs to be made)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MarinaConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MarinaConnectionString1"].ConnectionString;
             //regardless of special characters
             return new SqlConnection(connectionString);
         }
