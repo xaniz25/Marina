@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Marina.App_Code
+namespace Marina
 {
     public class Lease
     {

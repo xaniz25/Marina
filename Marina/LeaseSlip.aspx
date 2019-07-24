@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LeaseSlip.aspx.cs" Inherits="Marina.WebForm5" %>
+<%@ Import Namespace="Marina" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,22 +31,25 @@
         </p>
         <p>Available Slips:</p>
         <p>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SlipID" DataSourceID="SqlDataSource2">
+            <asp:GridView ID="gvSlips" runat="server" AutoGenerateColumns="False" DataKeyNames="SlipID" DataSourceID="SqlDataSource2">
                 <Columns>
                     <asp:BoundField DataField="SlipID" HeaderText="SlipID" InsertVisible="False" ReadOnly="True" SortExpression="SlipID" />
                     <asp:BoundField DataField="Width" HeaderText="Width" SortExpression="Width" />
                     <asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
                     <asp:CheckBoxField DataField="WaterService" HeaderText="WaterService" SortExpression="WaterService" />
                     <asp:CheckBoxField DataField="ElectricalService" HeaderText="ElectricalService" SortExpression="ElectricalService" />
-                    <asp:ButtonField ButtonType="Button" Text="Lease" />
+                    <asp:CommandField ShowSelectButton="True" />
                 </Columns>
             </asp:GridView>
         </p>
         <p>
+            <asp:Button ID="btnAddLease" runat="server" OnClick="btnAddLease_Click" Text="Lease" />
+        </p>
+        <p>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MarinaConnectionString1 %>" SelectCommand="SELECT s.ID as 'SlipID',Width, Length, WaterService, ElectricalService
-FROM Slip s JOIN Dock d ON d.ID = DockID
-WHERE DockID in (Select ID from Dock Where ID=@DockID)
-And s.ID NOT IN (SELECT SLIPID FROM LEASE)">
+                FROM Slip s JOIN Dock d ON d.ID = DockID
+                WHERE DockID in (Select ID from Dock Where ID=@DockID)
+                And s.ID NOT IN (SELECT SLIPID FROM LEASE)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" />
                 </SelectParameters>
