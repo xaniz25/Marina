@@ -32,3 +32,11 @@
     margin: 25px 10px;
     font-size: 18px;
 }
+
+#forms {
+    background-color: #ABBECD;
+    width: 400px;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 5px;
+}

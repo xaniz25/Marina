@@ -11,6 +11,7 @@ namespace Marina
 
     public static class DockDB
     {
+        //method that gets all docks and puts in on a list
         [DataObjectMethod(DataObjectMethodType.Select)]
         public static List<Dock> GetDock()
         {

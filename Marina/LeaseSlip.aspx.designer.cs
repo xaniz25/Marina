@@ -13,31 +13,49 @@ namespace Marina {
     public partial class WebForm5 {
         
         /// <summary>
-        /// gvLeasedSlips control.
+        /// dvCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvLeasedSlips;
+        protected global::System.Web.UI.WebControls.DetailsView dvCustomer;
         
         /// <summary>
-        /// LeaseSlipsDataSource control.
+        /// CustomerDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource LeaseSlipsDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource CustomerDataSource;
         
         /// <summary>
-        /// ddlDocks control.
+        /// gvCurrentSlips control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDocks;
+        protected global::System.Web.UI.WebControls.GridView gvCurrentSlips;
+        
+        /// <summary>
+        /// CurrentSlipsDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource CurrentSlipsDataSource;
+        
+        /// <summary>
+        /// gvDocks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvDocks;
         
         /// <summary>
         /// DocksDataSource control.
@@ -46,7 +64,7 @@ namespace Marina {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource DocksDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource DocksDataSource;
         
         /// <summary>
         /// gvSlips control.
@@ -58,21 +76,12 @@ namespace Marina {
         protected global::System.Web.UI.WebControls.GridView gvSlips;
         
         /// <summary>
-        /// btnAddLease control.
+        /// SlipsDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddLease;
-        
-        /// <summary>
-        /// SqlDataSource2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.SqlDataSource SlipsDataSource;
     }
 }

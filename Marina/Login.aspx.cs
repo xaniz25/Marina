@@ -13,34 +13,28 @@ namespace Marina
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
             lblErrorMessage.Visible = false;
-        }
-
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
-        {
-
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-             * To Do: 
-             * When logged in redirects user to LeaseSlip.aspx
-             * Add Validation
-             */
-          
-            using(SqlConnection connection = new SqlConnection(@"Data Source=DADI-LAPTOP;Initial Catalog=Marina;Integrated Security=True"))
+            //login an existing customer and pass the FirstName and Phone (used as password)
+            //as session variables and redirect customer to LeaseSlip.aspx
+            using(SqlConnection connection = new SqlConnection(@"Data Source=localhost\SAIT;Initial Catalog=Marina;Integrated Security=True"))
             {
                 connection.Open();
                 string query = "SELECT COUNT(1) FROM Customer WHERE FirstName=@FirstName AND Phone=@Phone";
                 SqlCommand sqlCmd = new SqlCommand(query, connection);
-                sqlCmd.Parameters.AddWithValue("@FirstName", txtUsername.Text);
-                sqlCmd.Parameters.AddWithValue("@Phone", txtPassword.Text);
+                sqlCmd.Parameters.AddWithValue("@FirstName", txtName.Text);
+                sqlCmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
 
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {   
-                    Session["FirstName"] = txtUsername.Text;
+                    Session["FirstName"] = txtName.Text;
+                    Session["Phone"] = txtPhone.Text;
                     Response.Redirect("LeaseSlip.aspx");
                 }
                 else
@@ -49,5 +43,11 @@ namespace Marina
                 }
             }
         }
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtPhone.Text = "";
+        }
+
     }
 }

@@ -5,7 +5,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container-fluid">
-        <h1>Contact Us</h1> <br />
+        <br />
+        <h2>Contact Us</h2> <br />
         <p>Inland Lake Marina <br />
         Box 123 <br />
         Inland Lake, Arizona <br />

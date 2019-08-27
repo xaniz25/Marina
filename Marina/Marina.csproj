@@ -87,7 +87,6 @@
     <Content Include="LeaseSlip.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\LeaseDB.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

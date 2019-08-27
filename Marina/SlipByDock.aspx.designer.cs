@@ -13,39 +13,39 @@ namespace Marina {
     public partial class WebForm2 {
         
         /// <summary>
-        /// ddlDocks control.
+        /// gvDocks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDocks;
+        protected global::System.Web.UI.WebControls.GridView gvDocks;
         
         /// <summary>
-        /// DockDataSource control.
+        /// DocksDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource DockDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource DocksDataSource;
         
         /// <summary>
-        /// GridView1 control.
+        /// gvSlips control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gvSlips;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// SlipsDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SlipsDataSource;
     }
 }

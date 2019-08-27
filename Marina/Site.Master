@@ -1,4 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Marina.Site" %>
+﻿<!--An ASP.NET Webform that creates a website for a company called Inland Marina that allows potential customers
+    to register and view available docks and slips where they can park their boats. Each dock has
+    water and/or electrical service. Only slips that haven't been leased will show on the list.
+    Once customers are registered, they can lease slips, and view slips that they have leased.
+    Created by Kai Feng, Victor Lantion & Shanice Talan. July 24, 2019. CPRG 214 OOSD Spring 2019.-->
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Marina.Site" %>
 
 <!DOCTYPE html>
 
@@ -8,19 +14,22 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
+            <!--company logo/banner-->
             <img id="banner" alt="banner" class="auto-style1" src="images/inlandmarina_banner.jpg" />
+            <!--navigation bar with 5 buttons-->
             <nav id="navbar">
-                <asp:Button class="btn" ID="BtnHome" runat="server" PostBackUrl="~/Homepage.aspx" Text="Home" />
-                <asp:Button class="btn" ID="BtnSlipByDock" runat="server" PostBackUrl="~/SlipByDock.aspx" Text="Available Slips" />
-                <asp:Button class="btn" ID="BtnContact" runat="server" PostBackUrl="~/Contact.aspx" Text="Contact" />
-                <asp:Button class="btn" ID="BtnRegister" runat="server" PostBackUrl="~/Register.aspx" Text="Register" />
-                <asp:Button class="btn" ID="BtnLogin" runat="server" Text="Log In" PostBackUrl="~/Login.aspx" />
+                <asp:Button class="btn" ID="BtnHome" runat="server" PostBackUrl="~/Homepage.aspx" Text="Home" CausesValidation="False" />
+                <asp:Button class="btn" ID="BtnSlipByDock" runat="server" PostBackUrl="~/SlipByDock.aspx" Text="Available Slips" CausesValidation="False" />
+                <asp:Button class="btn" ID="BtnContact" runat="server" PostBackUrl="~/Contact.aspx" Text="Contact" CausesValidation="False" />
+                <asp:Button class="btn" ID="BtnRegister" runat="server" PostBackUrl="~/Register.aspx" Text="Register" CausesValidation="False" />
+                <asp:Button class="btn" ID="BtnLogin" runat="server" Text="Log In" PostBackUrl="~/Login.aspx" CausesValidation="False" />
             </nav>
     </header>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

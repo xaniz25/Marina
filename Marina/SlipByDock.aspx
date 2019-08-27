@@ -3,30 +3,34 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-        <p>Select Dock:</p>
-        <p>
-            <asp:DropDownList ID="ddlDocks" runat="server" DataSourceID="DockDataSource" DataTextField="Name" DataValueField="ID" AutoPostBack="True">
-            </asp:DropDownList>
-            <asp:ObjectDataSource ID="DockDataSource" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDock" TypeName="Marina.DockDB"></asp:ObjectDataSource>
-        </p>
-        <p>Available Slips:</p>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SlipID" DataSourceID="SqlDataSource1">
+        <p><h5>Dock Information</h5>
+            <!--shows all docks and the service each has-->
+            <asp:GridView ID="gvDocks" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="DocksDataSource">
                 <Columns>
-                    <asp:BoundField DataField="SlipID" HeaderText="SlipID" InsertVisible="False" ReadOnly="True" SortExpression="SlipID" />
-                    <asp:BoundField DataField="Width" HeaderText="Width" SortExpression="Width" />
-                    <asp:BoundField DataField="Length" HeaderText="Length" SortExpression="Length" />
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                     <asp:CheckBoxField DataField="WaterService" HeaderText="WaterService" SortExpression="WaterService" />
+                    <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:CheckBoxField DataField="ElectricalService" HeaderText="ElectricalService" SortExpression="ElectricalService" />
                 </Columns>
             </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MarinaConnectionString1 %>" SelectCommand="SELECT s.ID as 'SlipID',Width, Length, WaterService, ElectricalService
-FROM Slip s JOIN Dock d ON d.ID = DockID
-WHERE DockID in (Select ID from Dock Where ID=@DockID)
-And s.ID NOT IN (SELECT SLIPID FROM LEASE)">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="ddlDocks" Name="DockID" PropertyName="SelectedValue" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-        <br />
-        Please Login or Register to Lease a Slip.</div>
+            <asp:SqlDataSource ID="DocksDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MarinaConnectionString %>" SelectCommand="SELECT [ID], [WaterService], [Name], [ElectricalService] FROM [Dock]"></asp:SqlDataSource>
+        </p>
+        <p><h5>Avaiable Slips</h5>
+            <!--shows slips that haven't been leased yet according to which dock is selected-->
+            <asp:GridView ID="gvSlips" runat="server" AutoGenerateColumns="False" DataKeyNames="SLIP ID" DataSourceID="SlipsDataSource" OnSelectedIndexChanged="GridView3_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="SLIP ID" HeaderText="SLIP ID" InsertVisible="False" ReadOnly="True" SortExpression="SLIP ID" />
+                    <asp:BoundField DataField="SLIP WIDTH" HeaderText="SLIP WIDTH" SortExpression="SLIP WIDTH" />
+                    <asp:BoundField DataField="SLIP LENGTH" HeaderText="SLIP LENGTH" SortExpression="SLIP LENGTH" />
+                    <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SlipsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MarinaConnectionString0 %>" InsertCommand="INSERT INTO Lease(ID, SlipID, CustomerID) VALUES (,,)" SelectCommand="SELECT Slip.ID AS [SLIP ID], Slip.Width AS [SLIP WIDTH], Slip.Length AS [SLIP LENGTH], Dock.Name FROM Slip INNER JOIN Dock ON Slip.DockID = Dock.ID WHERE (Slip.DockID IN (SELECT ID FROM Dock AS Dock_1 WHERE (ID = @ID))) AND (Slip.ID NOT IN (SELECT SlipID FROM Lease))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="gvDocks" Name="ID" PropertyName="SelectedValue" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </p>
+    </div>
 </asp:Content>

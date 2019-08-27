@@ -11,6 +11,7 @@ namespace Marina
 
     public static class SlipDB
     {
+        //method that gets only slips that haven't been leased depending on which dock is selected
         [DataObjectMethod(DataObjectMethodType.Select)]
         public static List<Slip> GetSlipByDock(int DockID)
         {
@@ -24,7 +25,7 @@ namespace Marina
             string query = "SELECT ID, Width, Length, DockID " +
                            "FROM Slip " +
                            "WHERE DockID in (Select ID from Dock Where DockID=@DockID) "+
-                           "AND ID NOT in (SELECT SlipID FROM Lease)";
+                           "And ID NOT IN(SELECT SLIPID FROM LEASE)";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -61,6 +62,7 @@ namespace Marina
             return slips;
         }
 
+        //gets slips that are leased by a customer
         [DataObjectMethod(DataObjectMethodType.Select)]
         public static List<Slip> GetSlipByCust(int CustomerID)
         {
@@ -71,14 +73,14 @@ namespace Marina
             SqlConnection connection = MarinaDB.GetConnection();
 
             //join command
-            string query = "select SlipID, Width, Length, DockID from Customer c " +
+            string query = "select SlipID, DockID, Width, Length from Customer c " +
                             "inner join Lease l " +
                             "on c.ID = CustomerID " +
                             "inner join Slip s " +
                             "on s.ID = SlipID " +
                             "inner join Dock d " +
                             "on d.ID = DockID " +
-                            "where @CustomerID = CustomerID";
+                            "where @CustomerID = Customer ID";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
