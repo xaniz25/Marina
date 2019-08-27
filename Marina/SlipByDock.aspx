@@ -18,7 +18,7 @@
         </p>
         <p><h5>Avaiable Slips</h5>
             <!--shows slips that haven't been leased yet according to which dock is selected-->
-            <asp:GridView ID="gvSlips" runat="server" AutoGenerateColumns="False" DataKeyNames="SLIP ID" DataSourceID="SlipsDataSource" OnSelectedIndexChanged="GridView3_SelectedIndexChanged">
+            <asp:GridView ID="gvSlips" runat="server" AutoGenerateColumns="False" DataKeyNames="SLIP ID" DataSourceID="SlipsDataSource">
                 <Columns>
                     <asp:BoundField DataField="SLIP ID" HeaderText="SLIP ID" InsertVisible="False" ReadOnly="True" SortExpression="SLIP ID" />
                     <asp:BoundField DataField="SLIP WIDTH" HeaderText="SLIP WIDTH" SortExpression="SLIP WIDTH" />
